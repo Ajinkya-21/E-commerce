@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <form action="signup.php" method="post" class="border border-primary p-4 w-25" onsubmit="return validate()">
+            <h2 class="text-center text-primary">Sign up</h2>
+            <input class="form-control mt-4" type="text" placeholder="Username" name="username" required>
+            <input class="form-control mt-2" type="text" placeholder="Password" name="password" id="pass" required>
+            <input class="form-control mt-2" type="text" placeholder="Confirm Password" name="cpassword" id="cpass" required>
+            <select name="typee" id="" class="form-control mt-2" required>
+                <option value="Vendor">Vendor</option>
+                <option value="Customer">Customer</option>
+            </select>
+            <div class="d-flex justify-content-between mt-4">
+                <span>Already have an account <a href="login.html">Login</a></span>
+                <button class="btn btn-primary">Signup</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+    function validate(){
+        var pass=document.getElementById('pass').value;
+        var cpass=document.getElementById('cpass').value;
+        if(pass===cpass){
+            return true;
+        }else{
+            alert("Password mismatched");
+            return false;
+        }
+    }
+</script>
+</html>
